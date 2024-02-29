@@ -1,0 +1,13 @@
+prefix=/Users/kaustubhsharma/Desktop/Projects/ML_Project/pr1
+exec_prefix=/Users/kaustubhsharma/Desktop/Projects/ML_Project/pr1
+libdir=/Users/kaustubhsharma/Desktop/Projects/ML_Project/pr1/lib
+sharedlibdir=/Users/kaustubhsharma/Desktop/Projects/ML_Project/pr1/lib
+includedir=/Users/kaustubhsharma/Desktop/Projects/ML_Project/pr1/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
