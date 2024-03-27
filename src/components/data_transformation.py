@@ -1,20 +1,20 @@
 import sys 
-from dataclasses import dataclass 
+from dataclasses import dataclass    
 
 import numpy as np 
-import pandas as pd
+import pandas as pd 
 from sklearn.compose import ColumnTransformer 
 from sklearn.impute import SimpleImputer 
 from sklearn.pipeline import Pipeline 
-from sklearn.preprocessing import OneHotEncoder,StandardScaler
+from sklearn.preprocessing import OneHotEncoder,StandardScaler 
 
-from src.exception import CustomException
-from src.logger import logging
-import os
+from src.exception import CustomException 
+from src.logger import logging 
+import os 
 
 from src.utils import save_object
 
-@dataclass
+@dataclass 
 class DataTransformationConfig:
     preprocessor_obj_file_path=os.path.join('artifacts',"preprocessor.pkl")
 
@@ -58,7 +58,7 @@ class DataTransformation:
             logging.info(f"Categorical columns: {categorical_columns}")
             logging.info(f"Numerical columns: {numerical_columns}")
 
-            preprocessor=ColumnTransformer(
+            preprocessor=ColumnTransformer( 
                 [
                 ("num_pipeline",num_pipeline,numerical_columns),
                 ("cat_pipelines",cat_pipeline,categorical_columns)
@@ -118,5 +118,5 @@ class DataTransformation:
                 test_arr,
                 self.data_transformation_config.preprocessor_obj_file_path,
             )
-        except Exception as e:
-            raise CustomException(e,sys)
+        except Exception as e: 
+            raise CustomException(e,sys) 
